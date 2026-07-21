@@ -1,0 +1,27 @@
+/* Basic Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: url('cybersecurity-banner.jpg') no-repeat center center/cover;
+}
+
+/* Section Headings */
+h3 {
+    color: #1B3A4B;
+    margin-bottom: 20px;
+}
+
+/* Navigation Bar */
+.navbar-brand {
+    font-weight: bold;
+    color: #FF8C00 !important;
+}
+
+/* Footer */
+footer {
+    background-color: #1B3A4B;
+}

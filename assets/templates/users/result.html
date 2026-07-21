@@ -1,0 +1,18 @@
+{%extends 'users/userbase.html'%}
+{%block contents%}
+<section id="recommendations" class="bg-light py-5">
+    <div class="container">
+        <h1>Exam Result</h1>
+        <p>Score: {{ score }} out of {{ total_questions }}</p>
+        <p>Cybersecurity Level: {{ level }}</p>
+
+        <h2>Demographic Information</h2>
+        <p>Gender: {{ gender }}</p>
+        <p>Age Group: {{ age_group }}</p>
+        <p>Occupation: {{ occupation }}</p>
+        <p>Region: {{ region }}</p>
+
+        <a href="{% url 'SampleTest' %}">Take the exam again</a>
+    </div>
+</section>
+{%endblock%}

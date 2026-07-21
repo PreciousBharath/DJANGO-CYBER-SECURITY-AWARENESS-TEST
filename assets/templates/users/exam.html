@@ -1,0 +1,48 @@
+{%extends 'users/userbase.html'%}
+{%block contents%}
+<section id="recommendations" class="bg-light py-5">
+    <div class="container">
+        <h1>Cybersecurity Online Exam</h1>
+        <form method="POST" action="{% url 'SampleTest' %}">
+            {% csrf_token %}
+            <h2>Demographic Information</h2>
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <label>Age Group:</label>
+            <select name="age_group" required>
+                <option value="18-25">18-25</option>
+                <option value="26-33">26-33</option>
+                <option value="34+">34+</option>
+            </select><br><br>
+
+            <label>Occupation:</label>
+            <select name="occupation" required>
+                <option value="Student">Student</option>
+                <option value="Working Professional">Working Professional</option>
+                <option value="Other">Other</option>
+            </select><br><br>
+
+            <label>Region:</label>
+            <input type="text" name="region" required><br><br>
+
+            <h2>Cybersecurity Questions</h2>
+            {% for question in questions %}
+            <p>{{ forloop.counter }}. {{ question.question }}</p>
+            {% for option in question.options %}
+                <input type="radio" name="answer{{ forloop.parentloop.counter0 }}" value="{{ option }}" required> {{ option }}<br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+            <br>
+
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+{%endblock%}
